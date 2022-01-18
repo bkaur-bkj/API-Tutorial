@@ -8,7 +8,7 @@ router.get('/',(req,res,next)=>{
 });
 
 router.post('/',(req,res,next)=>{
-    res.status( 00).json({
+    res.status(200).json({
       message :'handing post req'
     });
 });
