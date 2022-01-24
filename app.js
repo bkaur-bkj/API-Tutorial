@@ -14,9 +14,14 @@ app.use((req,res,next)=>{
 })
 //this is the last default point like of a switch case to be executed if no other route got
 
-app.use((error,req,res,next)=>{
-
-}); //optional semicolon 
+app.use((err,req,res,next)=>{
+    res.status(err.status || 500);
+    res.json({
+        err: {
+            message:err.message
+        }
+    })
+  });//optional semicolon 
 module.exports= app;
 // status 200 for verything ok
 
