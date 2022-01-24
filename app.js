@@ -9,7 +9,7 @@ app.use('/products',productRoutes); //anything starting with /products will be f
  // its like a middleware 
 app.use((req,res,next)=>{
     const err=new Error('Not found') // "  " and ' ' both works, ' ' preferred
-    err.status(404)
+    err.status=404;
     next(err);//optional semicolon
 })
 //this is the last default point like of a switch case to be executed if no other route got
